@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body {
+    margin: 0;
+    background-color: rgb(247, 243, 233);
+    color: rgb(75, 59, 32);
+}
+
+/* header and nav */
+
+h1 {
+    margin: 0;
+    background-color: #97cabe;
+    padding: 1.5rem;
+    font-family: 'Comme', sans-serif;
+    text-align: center;
+    font-size: 45px;
+    color: #38655a;
+}
+
+nav {
+    box-shadow: 4px 4px 9px rgba(55, 66, 49, 0.3);
+}
+
+.hlink {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+ul {
+    margin-top: 0;
+    background-color: #38655a;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    font-size: 15px;
+    font-family: 'Comme', sans-serif;
+    list-style: none;
+    margin: 10px;
+}
+  
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* main */
+
+h2, p {
+    font-family: 'Lato', sans-serif;
+    margin: 1rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+    margin-top: -0.5rem;
+}
+
+.row {
+    margin-top: -4rem;
+}
+
+/* slideshow */
+
+.container {
+    margin-top: -5rem;
+}
+
+section {
+    width: 450px;
+    margin: auto;
+}
+
+.slideshow {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    margin: 1rem;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+    box-shadow: 4px 4px 9px rgba(55, 66, 49, 0.2);
+    border: solid 5px rgb(75, 59, 32);
+    padding-bottom: 4.7rem;
+    background-color: rgb(231, 213, 182);
+}
+
+figcaption {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-top: -4.4rem;
+    color: rgb(31, 33, 34);
+    font-size: 14px;
+    padding-left: 0.8rem;
+    padding-right: 0.5rem;
+}
+
+.slide {
+    display: block;
+    opacity: 1;
+}
+
+.hide {
+    display: none;
+}
+
+/* slideshow transition*/ 
+
+
+/* buttons */
+.back-btn, .next-btn {
+    font-family: 'Comme', sans-serif;
+    background-color: #38655a;
+    font-weight: 500;
+    font-size: 15px;
+    color: #bae3d9;
+    border-radius: 10%;
+    padding: 0.4rem;
+    box-shadow: 1px 1px 10px rgba(55, 66, 49, 0.2);
+}
+
+.next-btn {
+    margin-left: 5%;
+}
+
+.back-btn {
+    margin-left: 37%;
+}
+
+div {
+    margin-top: 6.5rem;
+}
+
+/* footer */
+
+footer {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: #38655a;
+    color: #ffffff;
+}
+
+footer p, .home {
+    font-family: 'Comme', sans-serif;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.home {
+    color: #88d7fc;
+    margin-left: 1rem;
+}
+
+@media only screen and (min-width : 1067px) {
+
+    .row {
+        display: flex;
+        margin-top: -7rem;
+        justify-content: center;
+    }
+
+    .container {
+        margin-top: 2rem;
+    }
+
+    .text {
+        width: 650px;
+    }
+
+   footer p {
+        width: 600px;
+        height: 80px;
+    
+   }
+
+   .home {
+        font-weight: 600;
+        text-decoration: underline;
+   }
+}
