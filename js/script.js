@@ -4,7 +4,6 @@ let myButton;
 
 // user interaction preparation
 function init() {
-    
     // slideshow shortcut variables
     const container = document.querySelector(".container");
     const currentSlide = document.querySelector(".current");
@@ -14,8 +13,8 @@ function init() {
     // slideshow controls
     const controls = document.createElement("div");
     controls.className = "controls";
-    controls.innerHTML = 
-    '<a href ="#" class="back-btn">Back</a><a href ="#" class="next-btn">Next</a>';
+    controls.innerHTML =
+        '<a href ="#" class="back-btn">Back</a><a href ="#" class="next-btn">Next</a>';
     // display controls on page
     container.appendChild(controls);
 
@@ -30,10 +29,8 @@ function init() {
     slides.forEach((image) => {
         image.classList.add("hide");
     });
-        slides[0].classList.remove("hide");
-    
+    slides[0].classList.remove("hide");
 }
-
 
 function showNewSlide(e) {
     // slideshow shortcut variables
@@ -42,46 +39,48 @@ function showNewSlide(e) {
     const frame = document.querySelector(".slideshow");
     const slides = document.querySelectorAll(".slide");
     let myButton;
-    if (e){
+
+    if (e) {
+        e.preventDefault(); // so the buttons don't also reload the page  T.B.
         const myButton = e.target;
-    } 
+    }
     let nextUp = "";
 
     // check to see what button was clicked
-    
-    if(!e || myButton && myButton.classList.contains("back-btn")){
+
+    if (!e || (myButton && myButton.classList.contains("back-btn"))) {
         nextUp = currentSlide.previousElementSibling;
     } else {
         nextUp = currentSlide.nextElementSibling;
     }
 
-    // back button 
-    if(nextUp === null) {
+    // back button
+    if (nextUp === null) {
         let index = slides.length - 1;
         nextUp = slides[index];
-    } 
+    }
 
-    // next button  
+    // next button
     if (nextUp.nodeName !== "IMG") {
         nextUp = slides[0];
     }
 
     if (currentSlide && nextUp) {
         // deccommision the currently visible slide
-        currentSlide.classList.toggle("hide");
-        currentSlide.classList.toggle("current");
+        currentSlide.classList.add("hide");
+        currentSlide.classList.remove("current");
 
         // show the next slide
-        nextUp.classList.toggle("hide");
-        nextUp.classList.toggle("current");
+        nextUp.classList.remove("hide");
+        nextUp.classList.add("current");
 
         // change captions to match slide
-        const txt = currentSlide.previousElementSibling.alt;
+        const txt = nextUp.alt; // since we've already setup the next slide, use nextUp instead of currentslide.  T.B.
         const caption = frame.querySelector("figcaption");
         caption.textContent = txt;
     }
 
-    if (e){
+    if (e) {
         clearInterval(myTimer);
-    } 
+    }
 }
